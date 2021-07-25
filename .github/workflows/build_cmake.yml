@@ -6,6 +6,10 @@ jobs:
   build:
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
+    defaults:
+      run:
+        working-directory: ./cpp #cd directory
+
     strategy:
       fail-fast: false
       matrix:
@@ -34,10 +38,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-
-    - name: cd directory
-      shell: bash
-      run:  cd cpp
 
     - name: Download Ninja and CMake
       id: cmake_and_ninja
