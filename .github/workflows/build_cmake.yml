@@ -36,7 +36,8 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: cd directory
-      shell: cd cpp
+      shell: bash
+      run:  cd cpp
 
     - name: Download Ninja and CMake
       id: cmake_and_ninja
